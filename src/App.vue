@@ -280,7 +280,7 @@ export default {
   text-align: right;
 }
 #basket {
-  flex: 1 1 200px;
+  flex: 1 1 400px;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -376,6 +376,14 @@ ul {
         background: lighten($color: #37003c, $amount: 20%);
       }
     }
+  }
+}
+@media only screen and (max-width: 400px) {
+  #top-nav,
+  #bottom-nav,
+  body {
+    font-size: 0.8rem;
+    background-color: lightblue !important;
   }
 }
 </style>

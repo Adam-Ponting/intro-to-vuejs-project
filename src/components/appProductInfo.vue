@@ -20,7 +20,6 @@
           </button>
         </div>
       </div>
-      <!--  -->
       <div class="club-icons">
         <div v-for="(club, index) in clubs" :key="index" class="club-icon">
           <img
@@ -139,6 +138,7 @@ export default {
   flex: 0 1 1;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
 }
@@ -166,7 +166,7 @@ export default {
 }
 .product-info {
   align-self: flex-start;
-  flex: 1 1 100px;
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -186,7 +186,6 @@ export default {
   }
 }
 .club-icons {
-  // align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -196,6 +195,21 @@ export default {
       height: 64px;
       box-shadow: 0 0 2px 2px #37003c;
     }
+  }
+}
+@media only screen and (max-width: 400px) {
+  #shirt-and-description {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .club-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .club-icon {
+    text-align: center;
   }
 }
 </style>
