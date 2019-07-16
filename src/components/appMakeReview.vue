@@ -1,6 +1,5 @@
- <template>
+<template>
   <form id="review-form" @submit.prevent="onSubmit">
-
     <p class="question">
       <label for="name" class="q">Name:</label>
       <input id="name" class="a" placeholder="Enter your Name" v-model="name" />

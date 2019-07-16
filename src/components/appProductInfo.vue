@@ -12,14 +12,23 @@
           class="selected-shirt"
         />
         <div class="cart-buttons">
-          <button @click="addToCart" :class="shirtInStock">Add to Basket</button>
-          <button @click="removeFromCart" :class="shirtInCart">Remove from Basket</button>
+          <button @click="addToCart" :class="shirtInStock">
+            {{ addButton }}
+          </button>
+          <button @click="removeFromCart" :class="shirtInCart">
+            Remove from Basket
+          </button>
         </div>
       </div>
       <!--  -->
       <div class="club-icons">
         <div v-for="(club, index) in clubs" :key="index" class="club-icon">
-          <img :src="club.icon" :alt="club.team" :title="club.team" @mouseover="selectAClub(index)" />
+          <img
+            :src="club.icon"
+            :alt="club.team"
+            :title="club.team"
+            @mouseover="selectAClub(index)"
+          />
         </div>
       </div>
 
@@ -80,6 +89,13 @@ export default {
     }
   },
   computed: {
+    addButton() {
+      if (this.clubs[this.selectedClub].quantity === 0) {
+        return 'Sold Out!'
+      } else {
+        return 'Add to Basket'
+      }
+    },
     image() {
       return this.clubs[this.selectedClub].shirt // get shirt from clubs[index].shirt
     },
