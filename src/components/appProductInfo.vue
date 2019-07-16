@@ -117,9 +117,10 @@ export default {
   box-shadow: 0 0 10px 10px #37003c;
 }
 .disabledButton {
-  background: grey !important;
+  color: black !important;
+  background: lightgray !important;
   &:hover {
-    background: grey !important;
+    background: lightgray !important;
     cursor: default !important;
   }
 }
