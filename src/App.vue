@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <div id="top-nav">
-      <a
-        href="https://adp-cv.web.app/"
-        target="_blank"
-        title="Go to my website"
-      >
+      <a href="https://adp-cv.web.app/" target="_blank" title="Go to my website">
         <img src="./assets/ap-logo.png" alt />
       </a>
       <h1>Premier League 2020</h1>
@@ -23,9 +19,10 @@
         <ul>
           <li v-for="(item, index) in cart" :key="index">
             1 x {{ item.team }} Shirt, £{{ item.price }}
-            <button @click="removeFromBasket(index)" title="Remove Item">
-              &#10006; Remove
-            </button>
+            <button
+              @click="removeFromBasket(index)"
+              title="Remove Item"
+            >&#10006; Remove</button>
           </li>
         </ul>
         <div class="totals">
@@ -33,13 +30,7 @@
             <p>Basket Items: {{ cart.length }}</p>
             <p>Basket Total : £{{ cartTotal() }}</p>
           </div>
-          <button
-            @click="checkout"
-            :disabled="cart.length === 0"
-            :class="checkoutStyle"
-          >
-            Checkout
-          </button>
+          <button @click="checkout" :disabled="cart.length === 0" :class="checkoutStyle">Checkout</button>
         </div>
       </div>
     </div>
@@ -50,26 +41,15 @@
         @click="selectedTab = tab"
         :class="{ activeTab: selectedTab === tab }"
         class="tab"
-        >{{ tab }}</span
-      >
+      >{{ tab }}</span>
     </div>
 
-    <app-make-review
-      v-show="selectedTab === 'Make a Review'"
-      @review-submitted="reviewSubmitted"
-    />
-    <app-view-review
-      v-show="selectedTab === 'View Reviews'"
-      :reviews="reviews"
-    />
+    <app-make-review v-show="selectedTab === 'Make a Review'" @review-submitted="reviewSubmitted" />
+    <app-view-review v-show="selectedTab === 'View Reviews'" :reviews="reviews" />
     <div id="bottom-nav">
       <h1>Premier League 2020</h1>
       <div>
-        <a
-          href="https://adp-cv.web.app/"
-          target="_blank"
-          title="Go to my website"
-        >
+        <a href="https://adp-cv.web.app/" target="_blank" title="Go to my website">
           <img src="./assets/ap-logo.png" alt />
         </a>
         <a
@@ -384,6 +364,29 @@ ul {
   body {
     font-size: 0.8rem;
     background-color: lightblue !important;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    > li {
+      margin: 0.2rem 0.5rem;
+      font-size: .8rem;
+      &:first-of-type {
+        margin-top: 1rem;
+      }
+      &:last-of-type {
+        margin-bottom: 1rem;
+      }
+
+      > button {
+        font-size: .7rem;
+        cursor: pointer;
+        border: 2px solid #37003c;
+        padding: 1px 2px;
+      }
+    }
   }
 }
 </style>
