@@ -65,24 +65,14 @@
     />
     <div id="bottom-nav">
       <h1>Premier League 2020</h1>
-      <div>
-        <a
-          href="https://adp-cv.web.app/"
-          target="_blank"
-          rel="noreferrer"
-          title="Go to my website"
-        >
-          <img src="./assets/ap-logo.png" alt />
-        </a>
-        <a
-          href="https://github.com/Mada75/intro-to-vuejs-project/"
-          target="_blank"
-          rel="noreferrer"
-          title="View on GitHub"
-        >
-          <img src="./assets/github.png" alt />
-        </a>
-      </div>
+      <a
+        href="https://github.com/Mada75/intro-to-vuejs-project/"
+        target="_blank"
+        rel="noreferrer"
+        title="View on GitHub"
+      >
+        <img src="./assets/github.png" alt />
+      </a>
     </div>
   </div>
 </template>
